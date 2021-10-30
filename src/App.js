@@ -10,6 +10,7 @@ import AddService from './components/AddServices/AddService';
 import ManageOrders from './components/ManageOrders/ManageOrders';
 import Services from './components/Services/Services';
 import Booking from './components/Booking/Booking';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -31,18 +32,18 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/myOrder/:serviceId">
+            <PrivateRoute path="/myOrder/:serviceId">
               <MyOrders></MyOrders>
-            </Route>
-            <Route path="/addService">
+            </PrivateRoute>
+            <PrivateRoute path="/addService">
               <AddService></AddService>
-            </Route>
-            <Route path="/manageOrders/:serviceId">
+            </PrivateRoute>
+            <PrivateRoute path="/manageOrders/:serviceId">
               <ManageOrders></ManageOrders>
-            </Route>
-            <Route path="/booking/:serviceId">
+            </PrivateRoute>
+            <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
