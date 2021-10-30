@@ -78,7 +78,9 @@ const ManageOrders = () => {
             .then(res => {
                 console.log(res);
                 if (res.data.modifiedCount > 0) {
-                    alert('updated successfully')
+                    <div class="alert alert-success" role="alert">
+                        Successfully updated a service.
+                    </div>
                     setService({});
                     reset();
                 }
@@ -86,14 +88,14 @@ const ManageOrders = () => {
     }
     return (
         <div>
-            <h2>Update Your Service</h2>
-            <h2>{service.name}</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input onChange={handleUpdateName} {...register("name")} placeholder="name" />
-                <textarea onChange={handleUpdateText} {...register("text")} placeholder="description" />
-                <input onChange={handleUpdatePrice} type="number" {...register("price")} placeholder="price" />
-                <input onChange={handleUpdateImg} {...register("img")} placeholder="image" />
-                <input type="submit" />
+            <h2 className="text-warning">Update Your Service</h2>
+            <h2 className="text-success">{service.name}</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="d-grid p-2 justify-content-md-center">
+                <input className="my-2" onChange={handleUpdateName} {...register("name")} placeholder="name" />
+                <textarea className="my-2" onChange={handleUpdateText} {...register("text")} placeholder="description" />
+                <input className="my-2" onChange={handleUpdatePrice} type="number" {...register("price")} placeholder="price" />
+                <input className="my-2" onChange={handleUpdateImg} {...register("img")} placeholder="image" />
+                <input className="my-2" type="submit" />
             </form>
         </div>
     );

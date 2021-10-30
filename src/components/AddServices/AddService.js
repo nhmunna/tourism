@@ -10,20 +10,22 @@ const AddService = () => {
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
-                    alert("Successfully submit");
+                    <div class="alert alert-success" role="alert">
+                        Successfully added a service.
+                    </div>
                     reset();
                 }
             })
     };
     return (
-        <div className="add-service">
-            <h2>Please add a service</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name", { required: true, maxLength: 20 })} placeholder="name" />
-                <textarea {...register("text")} placeholder="description" />
-                <input type="number" {...register("price")} placeholder="price" />
-                <input {...register("img")} placeholder="image" />
-                <input type="submit" />
+        <div>
+            <h2 className="text-primary">Please add a service</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="d-grid p-2 justify-content-md-center">
+                <input className="my-2" {...register("name", { required: true, maxLength: 20 })} placeholder="name" />
+                <textarea className="my-2" {...register("text")} placeholder="description" />
+                <input className="my-2" type="number" {...register("price")} placeholder="price" />
+                <input className="my-2" {...register("img")} placeholder="image" />
+                <input className="my-2" type="submit" />
             </form>
         </div>
     );

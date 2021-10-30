@@ -14,7 +14,9 @@ const MyOrders = () => {
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
-                    alert("Successfully submit");
+                    <div class="alert alert-success" role="alert">
+                        Successfully submit your service.
+                    </div>
                     reset();
                 }
             })
@@ -23,18 +25,19 @@ const MyOrders = () => {
     };
     return (
         <div>
-            <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
+            <h2 className="text-info">Please input your details</h2>
+            <form className="d-grid p-2 justify-content-md-center" onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
-                <input defaultValue={user.displayName} {...register("name")} />
-                <input placeholder="address" defaultValue="" {...register("address")} />
-                <input placeholder="city" defaultValue="" {...register("city")} />
-                <input placeholder="phone" defaultValue="" {...register("phone")} />
+                <input className="my-2" defaultValue={user.displayName} {...register("name")} />
+                <input className="my-2" placeholder="address" defaultValue="" {...register("address")} />
+                <input className="my-2" placeholder="city" defaultValue="" {...register("city")} />
+                <input className="my-2" placeholder="phone" defaultValue="" {...register("phone")} />
 
                 {/* include validation with required or other standard HTML validation rules */}
-                <input defaultValue={user.email} {...register("email", { required: true })} />
+                <input className="my-2" defaultValue={user.email} {...register("email", { required: true })} />
                 {/* errors will return when field validation fails  */}
                 {errors.email && <span className="error">This field is required</span>}
-                <input type="submit" />
+                <input className="my-2" type="submit" />
             </form>
         </div>
     );
