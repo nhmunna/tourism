@@ -4,9 +4,10 @@ and server side link ("https://github.com/programming-hero-web-course1/tourism-o
 live website link("https://tourism-64219.web.app/")
 
 This website provides:
-* To show various historical location
-* You can book your tour
-* You can know about various place
-* You can add your service
-* You can delete your service
-* You can update your service
+* This is a tourism website where users can book tourism plan.
+* Firebase Authentication is used for login and registration.
+* This site is fully designed with Bootstrap.
+* Users can know about various place
+* Users can add their service
+* Users can delete their service
+* Users can update their service
